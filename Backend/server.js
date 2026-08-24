@@ -73,8 +73,8 @@ const start = async () => {
   try {
     await connectDB();
     initFirebase();
-    app.listen(PORT, () => {
-      console.log(`DocPing backend running on http://localhost:${PORT}`);
+    app.listen(PORT,'0.0.0.0', () => {
+      console.log(`DocPing backend running on port ${PORT}`);
       console.log(`Swagger docs: http://localhost:${PORT}/api-docs`);
     });
   } catch (err) {
