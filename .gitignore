@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.log
+dist/
+build/
+.vercel/
+.firebase/
+.DS_Store
+
+Backend/.env
+Backend/*-firebase-adminsdk-*.json
+Backend/firebase-service-account.json

@@ -1,0 +1,32 @@
+{
+  "name": "docping-backend",
+  "version": "1.0.0",
+  "description": "DocPing doctor appointment platform - RESTful backend (Express + MongoDB + Firebase Auth)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node seed/seed.js"
+  },
+  "keywords": [
+    "docping",
+    "appointment",
+    "express",
+    "mongodb",
+    "firebase"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.2.0",
+    "mongoose": "^8.5.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

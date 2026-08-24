@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Firebase Admin SDK private key
+firebase-service-account.json
+*-firebase-adminsdk-*.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+
+# Vercel / deployment
+.vercel/
+.vercel
+
+# Misc
+coverage/
