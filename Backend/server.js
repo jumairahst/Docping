@@ -73,18 +73,22 @@ const start = async () => {
   try {
     await connectDB();
     initFirebase();
-    app.listen(PORT,'0.0.0.0', () => {
-      console.log(`DocPing backend running on port ${PORT}`);
-      console.log(`Swagger docs: http://localhost:${PORT}/api-docs`);
-    });
+    console.log('DB connected & Firebase initialized');
   } catch (err) {
-    console.error('Failed to start server:', err.message);
-    process.exit(1);
+    console.error('Failed to initialize server:', err.message);
+    if (require.main === module) process.exit(1);
   }
 };
 
+// Serverless (Vercel) এবং local দুই ক্ষেত্রেই init চালাতে হবে
+start();
+
+// শুধু local এ চালানোর সময় app.listen() করবে; Vercel এ এটা স্কিপ হবে
 if (require.main === module) {
-  start();
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`DocPing backend running on port ${PORT}`);
+    console.log(`Swagger docs: http://localhost:${PORT}/api-docs`);
+  });
 }
 
 module.exports = app;
